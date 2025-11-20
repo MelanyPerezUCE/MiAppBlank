@@ -1,50 +1,60 @@
-# Welcome to your Expo app 👋
+# MiAppBlank
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Plantilla Expo + React Native.
 
-## Get started
+## Requisitos
+- Node.js (16+ recomendado)
+- npm o yarn
+- Expo CLI (se puede usar vía `npx`)
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+## Instalación
+```sh
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Comandos principales usados para crear este proyecto
+- Crear proyecto (Plantilla en blanco):
+```sh
+npx create-expo-app MiAppBlank --template blank 
+```
+- Entrar al proyecto:
+```sh
+cd MiAppBlank
+```
+- Ejecutar en desarrollo:
+```sh
+npx expo start
+```
+- Ejecutar en plataformas:
+```sh
+npm run ios
+npm run android
+npm run web
+```
 
-## Learn more
+## Ejecutar (resumen)
+- Desarrollo: `npx expo start` (o `npm run start`)
+- iOS: `npm run ios`
+- Android: `npm run android`
+- Web: `npm run web`
 
-To learn more about developing your project with Expo, look at the following resources:
+Los scripts están en `package.json`.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Estructura principal
+- app/
+  - app/_layout.tsx (layout raíz)
+  - app/(tabs)/_layout.tsx (layout de pestañas)
+  - app/(tabs)/index.tsx (pantalla principal)
+  - app/(tabs)/explore.tsx (pantalla Explore)
+  - app/modal.tsx (modal de ejemplo)
+- components/
+  - themed-text.tsx, themed-view.tsx
+  - ui/icon-symbol.tsx, ui/icon-symbol.ios.tsx
+  - parallax-scroll-view.tsx, hello-wave.tsx
+  - ui/collapsible.tsx, external-link.tsx, haptic-tab.tsx
+- hooks/
+  - use-color-scheme.ts, use-color-scheme.web.ts
+  - use-theme-color.ts
+- constants/theme.ts
+- tsconfig.json
+- eslint.config.js
